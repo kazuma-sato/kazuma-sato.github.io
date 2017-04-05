@@ -1,0 +1,204 @@
+/*
+Thanks for checking out my code! 
+Kazuma Sato 
+me@kazuma.sato.ca
+
+Created: March 26, 2016
+
+reference colours
+color:#E05151;
+color:#FFD452;
+color:#75a3d1;
+*/
+body{
+  position: relative;
+  color: white;
+  background-color: #555555;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+ h1,  h2,  h3,  h4,  h5,  h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: bold;
+  font-family: "Roboto Slab", Times, serif;
+}
+code, kbd, pre, samp {
+    font-family: "Source+Code+Pro",'Courier New', monospace;
+}
+h1 small, h2 small, h3 small,
+h4 small, h5 small, h6 small, 
+.h1 small, .h2 small, .h3 small,
+.h4 small, .h5 small, .h6 small,
+h1 .small, h2 .small, h3 .small, 
+h4 .small, h5 .small, h6 .small, 
+.h1 .small, .h2 .small, .h3 .small,
+.h4 .small, .h5 .small, .h6 .small {
+  font-weight: normal;
+  color: white
+}
+section>h1{
+  text-align: center;
+}
+.red {
+color:#E05151;
+}
+.blue {
+color:#75a3d1;
+}
+.yellow{
+color:#FFD452;
+}
+.red-bg {
+background-color:#E05151;
+}
+.blue-bg {
+background-color:#75a3d1;
+}
+.yellow-gb {
+background-color:#FFD452;
+}
+
+/* navbar */
+.navbar-inverse {
+  background-image: 
+  linear-gradient(to bottom, #555555 0%, #222 100%);
+}
+.navbar-inverse .navbar-brand {
+  color: #FFD452;
+}
+.navbar-inverse 
+.navbar-nav>li>a{
+  color: #75a3d1;
+}
+nav.navbar.shrink {
+  min-height: 35px;
+}
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 0;
+  }
+}
+
+
+/* carousel*/
+.carousel { 
+    height:800px;
+    margin-bottom: 10px;
+}
+
+.carousel, .item, .active { 
+    height:100%;
+}
+
+.carousel-inner { 
+    height:100%;
+}
+.carousel-badge {
+  position: absolute;
+  top: 50px;
+}
+.carousel-inner > .item {
+  max-width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: white;
+}
+.carousel-caption {
+  text-align: left;
+  background-color: rgba(85,85,85,0.5);
+  text-shadow: #555555 0.1em 0.1em 0.2em;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 5px;
+}
+.carousel-caption h1,
+.carousel-caption h2,
+.carousel-caption p,
+.carousel-caption small {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+.carousel-caption small {
+  display: inline-block;
+}
+.first-slide h1,
+.second-slide h1,
+.third-slide h1 {
+  color: #FFD452;
+}
+.first-slide {
+  background-image: 
+    url(../img/pexels-photos38892.jpg);
+}
+.second-slide {
+  background-image: 
+    url(../img/pexels-photos50711.jpg);
+}
+.third-slide {
+  background-image: 
+    url(../img/negativespace-coffee.jpg);
+}
+/* Contact */
+#contact label {
+  display: block;
+  margin-bottom: 0;
+}
+#contact li {
+  margin-top: 10px;
+}
+
+/* Portfolio */
+
+.featurette-heading{
+  margin-top: 10px;
+}
+.featurette .well {
+  height: 100%;
+}
+
+.first-messaging .img-circle {
+  background-image: 
+    url(../img/11007957_1535685653361264_716582532_n.jpg);
+}
+.second-messaging .img-circle {
+  background-image: 
+    url(../img/14373948_1586839411620400_477939219054985216_n.jpg);
+}
+.third-messaging .img-circle {
+  background-image: 
+    url(../img/13734237_1250031791674246_1402354972_n);
+}
+.img-circle {
+  background-repeat: no-repeat;
+  /*background-attachment: scroll;*/
+  background-position: center center;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+  -o-background-size: 100% auto;
+  color: white;
+}
+
+/* Modals */
+.modal legend,
+.modal label
+{
+  color : #555555;
+}
+.emscripten {
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 768px;
+    margin: 30px auto;
+  }
+}
