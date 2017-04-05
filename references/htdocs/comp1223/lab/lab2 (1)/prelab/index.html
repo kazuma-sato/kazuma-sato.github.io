@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head><!--
+Kazuma Sato 100 948 212
+COMP 1223 Web Development Fundamentals CRN 13095
+Lab Instructor Abid Rana
+Lecture Instructor Maziar Masoudi
+
+Pre-Lab 2 -->
+		<title>Pre-Lab 2 | COMP 1223</title>
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1223 Web Fundamentals HTML5 Pre-lab 2'>
+		<meta name='keywords' content='George Brown, Prelab, HTML5, HTML, T141'>
+		<meta name='author' content='Kazuma Sato'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="topwrap"><!--
+5. Inside the body make sure you include:
+	a. Header with ID mainHeader
+		i. Inside the header add a top level heading that says “George Brown College” and a second 
+		level header that says “Guide to Success”.-->
+			<h1 id="mainHeader">George Brown Collage</h1>
+			<h2>Guide to Success</h2><!--
+	b. Nav with ID mainNav
+		i. Inside the Nav create an unordered list that has the following items: “Home, Library, 
+		Guides, GBLearn and Blackboard”
+			1. “Home” links to your pre-lab 1 biography page.
+			2. “Library Guide” links to the George Brown library website
+			3. “GBLearn” links to GBlearn.com
+			4. “Blackboard” links to the George Brown Blackboard access
+		ii. All links except “Home” must open in a new page.-->
+			<div id="mainNav">
+				<ul>
+					<li><a href="../../lab1/prelab">Home</a></li>
+					<li><a href="http://www.georgebrown.ca/llc/" target="_blank">Library Guide</a></li>
+					<li><a href="http://www.gblearn.com/" target="_blank">GBlearn</a></li>
+					<li><a href="https://bb-gbc.blackboard.com/" target="_blank"> Blackboard</a></li> 
+				</ul>
+			
+			<hr>
+				</div>
+			</div><!--
+	c. Section with ID content
+		i. Inside the section write a brief paragraph (250 words) about life at George Brown College. 
+		What’s good, what’s bad and how this site will help new students. You may use dummy 
+		text for this part (http://www.lipsum.com/).
+		ii. Use at least two(2) inline styles for the text in the paragraph.-->
+		<section id="content">
+			<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Sed faucibus sodales tellus, ac ultrices eros placerat volutpat. Donec hendrerit scelerisque facilisis. Nulla cursus ultrices pulvinar. In sit amet scelerisque ligula. Donec a pretium purus. Vivamus convallis sodales magna id luctus. Aliquam at ornare velit, nec mollis velit. Proin ligula ante, hendrerit non erat at, fringilla tempus tortor. Suspendisse accumsan metus ligula, vitae sagittis nulla dictum sed. Cras semper fermentum vulputate. Phasellus condimentum ante iaculis scelerisque ultrices. Pellentesque tincidunt massa at risus condimentum, et tempor metus viverra. Integer elementum tempus massa, nec ultricies nisl pretium sed. Nullam blandit orci eget eleifend dictum. Pellentesque eget mattis lectus. Duis ullamcorper nisi neque, id convallis leo efficitur nec.</p>
+			<p><em>Curabitur iaculis urna in elit pharetra tempor.</em> Mauris at pretium nulla. In eget magna non tortor ultricies dictum vitae eu leo. Nullam mollis nulla non placerat cursus. Cras nec viverra orci, nec posuere nisi. Nunc felis nisl, aliquam vitae mattis a, iaculis at mauris. Aliquam nisl ipsum, malesuada at leo nec, sodales euismod libero. Aliquam finibus sagittis dignissim.</p>
+			<p><dfn>Phasellus ornare efficitur placerat.</dfn> Mauris scelerisque interdum diam at scelerisque. Nulla tincidunt, lorem a elementum sagittis, massa velit luctus augue, non ultrices massa augue eu felis. Duis aliquet gravida euismod. Etiam quis maximus arcu, vitae vehicula nisl. In efficitur eleifend dui et scelerisque. Cras a ligula lorem. Aenean nec rutrum purus. Nullam placerat sed mi quis tempor. Cras id ex pharetra, rutrum magna nec, euismod felis. Etiam tincidunt dignissim vulputate. Mauris ornare dolor sit amet arcu rutrum, eget.</p>
+		</section><!--
+	d. Article with ID mainArticle
+		i. Inside the article add something like a blog entry about an event coming up at George 
+		Brown College (100 words). Include a header an image and a brief description of the event.
+		Include a link to the event in the paragraph.
+		ii. You may use dummy text.
+		iii. See example one on the last page for a picture of a sample blog page.-->
+		<hr>
+		<article id="mainArticle">
+				<table><tr>
+					<td><img src="images/GBC_logo.png" width="216" height="151" alt="George Brown Logo" title="George Brown"></td>
+					<td><h3>Lorem ipsum</h3>
+					<p id="articleP"><a href="http://www.georgebrown.ca/current_students/events/" target="_blank" id="articleLink">dolor sit amet</a>, consectetur adipiscing elit. Vestibulum ipsum ligula, pharetra nec laoreet ut, sodales non risus. Suspendisse non accumsan velit. Nam in odio fermentum, commodo est ac, volutpat lacus. Donec eleifend quam turpis, vel rutrum ligula sodales et. Aliquam feugiat urna sollicitudin, euismod elit at, congue enim. Vivamus et eros ultricies, pretium diam quis, tincidunt metus. Etiam lectus urna, suscipit a tortor vel, dictum fringilla tellus. Sed eget tellus dictum, tincidunt turpis eget, suscipit sem. Vestibulum vel orci in diam commodo sollicitudin. Sed sem libero, interdum eget est sed, lobortis tempus nisl. Lorem ipsum dolor sit amet, consectetur.</p></td>
+				</tr></table>
+		</article><!--
+	e. Footer
+		i. In the footer add the following as an unordered list “About the Author, Contact Us and 
+		George Brown Main Site”.
+		ii. About the author links to your biography page (pre-lab 1), contact us is a mail link and 
+		George Brown link to the George Brown website.-->
+		<footer id="about">
+			<hr>
+			<ul>
+				<li><a href="../../lab1/prelab"> About the Author</a></li>
+				<li><a href="mailto:kazuma.sato@georgebrown.ca?subject=COMP1223%20Pre-Lab%202" target="_blank"> Contact Us</a></li>
+				<li><a href="http://www.georgebrown.ca/" target="_blank"> George Brown College Website</a></li>
+			</ul>
+			<div id="validator"><ul>
+				<li><script type='text/javascript'> //<!--[CDATA[
+					document.write ("<a href='http://validator.w3.org/check?uri=" +
+					location.href+ "\;ss=1;verbose=1' target='display'>" +
+					"<img src='http://gblearn.com/comp1223/wp-content/uploads/2013/09/HTML5_Logo_256.png' " +
+					"width='50' height='50' border='0' " +
+					"alt='Valid HTML5.' " +
+					"title='Valid HTML5' /></a>")
+				//]]--></script></li>
+				<li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+			        <img style="border:0;width:88px;height:31px"
+			            src="http://jigsaw.w3.org/css-validator/images/vcss"
+			            alt="Valid CSS!" /></a></li>
+			</ul>
+			<p><script type='text/javascript'> //<![CDATA[
+			document.write
+			dt=new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+			dt.toLocaleString() + "</small>")
+			//]]--></script></p>
+			</div>
+		</footer>
+		</div>
+	</body>
+<!-- Kaz -->
+</html>

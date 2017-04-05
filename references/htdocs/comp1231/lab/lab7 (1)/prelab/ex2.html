@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+
+-->
+<head>
+	<title>COMP 1231 Web Programming | Pre-lab 7 | Example 2</title>
+
+	<meta charset='utf-8'>
+	<meta name='description' content='George Brown COMP 1231 Web Programming Pre-lab 7 example 1'>
+	<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+	<meta name='author' content='Kazuma Sato'>
+
+	<style>	
+	</style>
+
+	<script>
+	</script>
+</head>
+
+<body>
+	<h1>COMP 1231 Web Programming - Pre-lab 7</h1>
+
+	<nav><a href="index.html">Exercise 1 </a>| Exercise 2</nav>
+
+	<h2>Exercise 2 - Classes of Objects</h2>
+	<hr>	
+	<div>
+		<lable for="courseName">Course Name: </lable><input type="text" name="courseName" id="courseName"><br>
+		<label for="courseCode">Course Code: </label><input type="text" name="courseCode" id="courseCode"><br>
+		<lable for="semester">Semester: </lable><input type="text" id="semester" max="semester"><br>
+		<button id="addButton" onclick="addCourse();">Add Course</button>
+	</div>
+	<div id="added"></div>
+	<button id="showButton" onclick="outputTable($('courseTable'), createTable());">Show Courses</button>
+	<div id="courseTable"></div>
+	
+	<script>
+		function $(elementName) {
+			return document.getElementById(elementName);
+		}
+		
+		function Course(name, course, semester){
+			this.name = name;
+			this.course = course;
+			this.semester = semester;
+			this.toString = function(){
+				return this.semester + 
+					" " + this.course + 
+					" (" + this.name + ")<br>";
+			}
+			this.createtRow = function(){
+				return "\t<tr>\n" + 
+					"\t\t<td>" + this.semester + "</td>\n" + 
+					"\t\t<td>" + this.course + "</td>\n" +
+					"\t\t<td>" + this.name + "</td>\n" +
+					"\t</tr>\n";
+			};
+		}
+		
+		var courses = [new Course("Web Development Fundamentals", 1223, 1),
+				   new Course("Web Programming", 1231, 2),
+				   new Course("Advanced Web Programming", 1230, 3)
+				  ];
+		
+		function addCourse(){
+			if ($("courseName").value && $("courseCode").value && $("semester").value){
+				var newCourse = new Course($("courseName").value, $("courseCode").value, $("semester").value);
+				courses[courses.length] = newCourse;
+				$("added").innerHTML = newCourse.toString();
+			}
+		}
+		
+		function createTable(){
+			var table = "<table>\n" +
+				"\t<tr>\n" + 
+				"\t\t<td><strong>Semester</strong></td>\n" +
+				"\t\t<td><strong>Course Code</strong></td>\n" +
+				"\t\t<td><strong>Course Discription</strong></td>\n" +
+				"\t</tr>\n";
+			
+			for(i in courses){
+					table += courses[i].createtRow();
+				}
+			table += "</table>";
+			return table;
+		}
+		
+		function outputTable(element, table){
+			element.innerHTML = table;
+		}
+	</script>
+	
+	<footer>
+		<hr>
+		<script>
+			//<!--[CDATA[
+			document.write("<br><a href='http://validator.w3.org/check?uri=" +
+				location.href +
+				"\;ss=1;verbose=1' target='display'>" +
+				"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+				"width='50' height='50' border='0' " +
+				"alt='Valid HTML5.' " +
+				"title='Valid HTML5' /></a><br>")
+			 dt = new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+			 //]]-->
+		</script>
+	</footer>
+</body>
+
+</html>

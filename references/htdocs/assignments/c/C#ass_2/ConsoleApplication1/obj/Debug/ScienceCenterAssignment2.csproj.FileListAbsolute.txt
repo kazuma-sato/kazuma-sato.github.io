@@ -1,0 +1,2 @@
+C:\Users\John\Desktop\C#ass_2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Google Drive\Desktop\assignments\c\C#ass_2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config

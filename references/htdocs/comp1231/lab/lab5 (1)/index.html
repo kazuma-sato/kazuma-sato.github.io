@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+--> 
+	<head>
+		<title>COMP 1231 Web Programming | Lab Test 5</title>
+
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1231 Web Programming Lab Test 5'>
+		<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+
+		<script>
+
+		</script>
+	</head>
+
+	<body>
+		<h1>COMP 1231 Web Programming - Lab Test 5</h1>
+		<h2>Kazuma Sato 100 948 212</h2>
+		<nav><a href="prelab/">Pre-lab 5</a></nav>
+		<hr><br>
+		<form>
+			<input type="text" id="input"><br />
+			<button onclick="displayAns(dec2octal(parseInt(_input.value)));return false;">Octal</button> <button onclick="displayAns(dec2hex(parseInt(_input.value)));return false;">Hexadecimal</button> <button onclick="displayAns(dec2bin(parseInt(_input.value)));return false;">Binary</button>
+		</form>
+		<div id="output"></div>
+		<script>
+		var _input = document.getElementById("input"),
+		    _output = document.getElementById("output"),
+		    _base;
+		
+		function dec2hex(num){
+			_base = "hexadecimal";
+			return num.toString(16)
+		}
+		function dec2octal(num){
+			_base = "octal";
+			return num.toString(8)
+		}
+		function dec2bin(num){
+			_base = "binary";
+			return num.toString(2)
+		}
+		function displayAns(num){
+			_output.innerHTML = _input.value + " in " + _base + " is " + num + ".";
+		}
+			
+			
+		</script>
+		<hr>
+		<script>
+			//<!--[CDATA[
+			document.write ("<br><a href='http://validator.w3.org/check?uri=" +
+							location.href +
+							"\;ss=1;verbose=1' target='display'>" +
+							"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+							"width='50' height='50' border='0' " +
+							"alt='Valid HTML5.' " +
+							"title='Valid HTML5' /></a><br>")
+			dt=new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+						   dt.toLocaleString() + "</small>")
+			//]]-->
+		</script>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang='en-us'>
+	<head>
+		<title>How to use Google Fonts | Assignment 2 | COMP 1223 Web Development Fundamentals</title>
+		<meta charset='utf-8'>
+		<meta name='description' content='This is a presentation to show how to use Google Fonts.It`s a team assignment.'>
+		<meta name='keywords' content='HTML,CSS,GOOGLE FONTS'>
+		<meta name='author' content='Harsimran Singh bagri'>
+
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Indie+Flower'>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<style>
+			#p1{
+			font-family: 'Tangerine', serif;
+	        font-size: 48px;
+			}
+			#p2{
+			font-family: 'Tangerine', serif;
+			font-size: 48px;
+			text-shadow: 4px 4px 4px #aaa;
+			}
+			#p3{
+			font-family: 'Indie Flower', cursive;
+			font-size: 48px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>Group 5 Tutorials</h1>
+			<h2>comp1223 crn13095</h2>
+			<nav id="siteNav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page1.html">Page 1</a></li>
+					<li><a href="page2.html">Page 2</a></li>
+					<li><a href="page3.html">Page 3</a></li>
+					<li>Page 4</li>
+					<li><a href="contact.html">Team Page</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<nav id="pageNav">
+			<ul>
+				<li><a href="#description">Description</a></li>
+				<li><a href="#tutorial">Tutorial</a></li>
+				<li><a href="#examples">Examples</a></li>
+			</ul>
+		</nav>
+
+		<section id="description">
+			<h1>Google Fonts</h1>
+			<h2>by harsimran singh bagri</h2>
+			<p>Google Fonts is an interactive directory of free hosted application programming interfaces for web fonts and it helps to change the style and size of characters. You can use Google Fonts to make our page more beautiful, readable and accessible. Moreover, it provides high-quality fonts that you can include in your web pages using the Google Fonts API.</p>
+			<p>Check out this list of <a href='http://www.google.com/fonts/' target='_blank' title='Google Fonts'>Google Fonts</a>.</p>
+		</section>
+		 
+		<section id="tutorial">
+			<h2>Tutorial</h2>
+				<ol>
+					<li>Add a special style link to your html file.<br>
+						like: <p><code>&lt;link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"&gt;</code></p>
+					</li>
+					<li>Choose the tag by selector accordingly and edit the fonts inside the selector.
+						like:<p><code>p {<br>
+						font-family: 'Indie Flower', cursive;<br>
+						font-size: 48px;<br>
+						}</code></p>
+					</li>
+					<li>Copy it to CSS style and name the tag we want.</li>
+				</ol>
+		</section>
+		 
+		<section id="examples">
+			<h2>Examples</h2>
+			<p><code>p {<br>
+					font-family: 'Tangerine', serif;<br>
+					font-size: 48px;<br>
+					}
+				</code></p>
+			<p id="p1">Make the page beautiful</p>
+			<p><code>p {<br>
+				font-family: 'Tangerine', serif;<br>
+				font-size: 48px;<br>
+				text-shadow: 4px 4px 4px #aaa;<br>
+				}</code></p>
+			<P id="p2">Make the page beautiful</p>
+			<p><code>p {<br>
+				font-family: 'Indie Flower', cursive;<br>
+				font-size: 48px;<br>
+				}</code></p>
+			<p id="p3">Make the page beautiful</p>
+		</section>
+
+		<footer>
+			<div id="validator">
+				<ul>
+					<li><script type='text/javascript'> //<!--[CDATA[
+					document.write ("<a href='http://validator.w3.org/check?uri=" +
+					location.href+ "\;ss=1;verbose=1' target='display'>" +
+					"<img src='http://gblearn.com/comp1223/wp-content/uploads/2013/09/HTML5_Logo_256.png' " +
+					"width='50' height='50' border='0' " +
+					"alt='Valid HTML5.' " +
+					"title='Valid HTML5' /></a>")
+					//]]--></script></li>
+					<li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+					       <img style="border:0;width:88px;height:31px"
+					           src="http://jigsaw.w3.org/css-validator/images/vcss"
+					           alt="Valid CSS!" /></a></li>
+					</ul>
+				<p><script type='text/javascript'> //<![CDATA[
+				document.write
+				dt=new Date(document.lastModified);
+				document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+				//]]--></script></p>
+			</div>
+		</footer>
+	</body>
+</html>

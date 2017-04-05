@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Assignment 1 - Team Project
+
+Group 1
+Kazuma Sato 	100948212	kazuma.sato@georgebrown.ca
+John Baumann 	100963202	john.baumann@georgebrown.ca
+
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+
+Sunday, April 5, 2015
+--> <head>
+		<title>Introduction to the Document Object Model | Assignment 1 | COMP 1231 Web Programming</title>
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1223 Web Programming JavaScript Group Project Assignment - Introduction to the Document Object Model'>
+		<meta name='keywords' content='George Brown, Assignment, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+		
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+		<style type="text/css">
+		table tr:nth-child(even){
+			background-color: #555555;
+		}
+		div#myDiagram{
+			background-color: #555555;
+			border: 1px solid #FFFFFF; 
+			width:100%; 
+			height:300px;
+		}
+		</style>
+
+		<script src="domtree.js"></script>
+		<script src="go.js"></script>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Group 1 Tutorials</h1>
+			<h2>comp1231 crn47693</h2>
+			<nav id="siteNav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>DOM Intro</li>
+					<li><a href="page2.html">DOM Scripting</a></li>
+					<li><a href="page3.html">DOM Style Object</a></li>
+					<li><a href="page4.html">Animations Intro</a></li>
+					<li><a href="contact.html">Team Page</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<nav id="pageNav">
+			<ul>
+				<li><a href="#description">Description</a></li>
+				<li><a href="#tutorial">Tutorial</a></li>
+				<li><a href="#examples">Examples</a></li>
+			</ul>
+		</nav>
+
+		<section id="description">
+			<h1>Introduction to the Document Object Model</h1>
+			<h2>by kazuma sato</h2>
+			
+			<p>This page is a brief intoduction to the Document Object Model.</p>
+			<p>The Document Object Model (or DOM) is a convention for interacting and discribing objects in HTML, XHTML and XML documents. The DOM consists of a family tree stucture where parts of the documents, known as nodes, are organized.</p>
+			<p>Everything in an HTML document can be considered a node. Anywhere from the elements in the document, the attributes in the element to  even whitespace between the elements as well. The following table is a list of the node types.</p>
+			
+			<table>
+				<tr>
+					<th><strong>Node Type</strong></th>
+					<th><strong>Name</strong></th>
+					<th><strong>Discription</strong></th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>ELEMENT_NODE</td>
+					<td>represents an element</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>ATTRIBUTE_NODE</td>
+					<td>represents an attribute</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>TEXT_NODE</td>
+					<td>represents textual content in an element or attribute</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>CDATA_SECTION_NODE</td>
+					<td>represents a CDATA section in a document (text that will NOT be parsed by a parser)</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>ENTITY_REFERENCE_NODE</td>
+					<td>represents an entity reference</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>ENTITY_NODE</td>
+					<td>represents an entity</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>PROCESSING_INSTRUCTION_NODE</td>
+					<td>represents a processing instruction</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>COMMENT_NODE</td>
+					<td>represents a comment</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>DOCUMENT_NODE</td>
+					<td>represents the entire document (the root-node of the DOM tree)</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>DOCUMENT_TYPE_NODE</td>
+					<td>provides an interface to the entities defined for the document</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>DOCUMENT_FRAGMENT_NODE</td>
+					<td>represents a "lightweight" Document object, which can hold a portion of a document</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>NOTATION_NODE</td>
+					<td>represents a notation declared in the document type definition (DTD)</td>
+				</tr>
+			</table>
+			<p><i>reference: <a href="http://en.wikipedia.org/wiki/Node_(computer_science)">Wikipedia - Document Object model</a></i></p>
+			<p>These are some terms used to discribe nodes as well.</p>
+			
+			<ul>
+				<li><b>Child</b>: A child node is a node extending from another node. For example, a computer with internet access could be considered a child node of a node representing the internet. The inverse relationship is that of a <b>parent node</b>. If node <i>C</i> is a child of node <i>A</i>, then <i>A</i> is the parent node of <i>C</i>.</li>
+				<li><b>Degree</b>: the degree of a node is the number of children of the node.</li>
+				<li><b>Depth</b>: the depth of node <i>A</i> is the length of the path from <i>A</i> to the root node. The root node is said to have depth 0.</li>
+				<li><b>Edge</b>: the connection between nodes.</li>
+				<li><b>Forest</b>: a set of trees.</li>
+				<li><b>Height</b>: the height of node <i>A</i> is the length of the longest path through children to a leaf node.</li>
+				<li><b>Internal node</b>: a node with at least one child.</li>
+				<li><b>Leaf node</b>: a node with no children.</li>
+				<li><b>Root node</b>: a node distinguished from the rest of the tree nodes. Usually, it is depicted as the highest node of the tree.</li>
+				<li><b>Sibling nodes</b>: these are nodes connected to the same parent node.</li>
+			</ul>
+			<p><i>reference: <a href="http://en.wikipedia.org/wiki/Node_(computer_science)">Wikipedia - Node (computer science)</a></i></p>
+			
+			<p>The following is a diagram of the DOM tree of this HTML document. If you select a node on the diagram, the node on the HTML document will be highlighted as well.</p>
+			<div id="myDiagram"></div>
+			<p><i>reference: <a href="http://gojs.net/latest/samples/DOMTree.html">gojs.net - HTML DOM Tree</a></i></p>
+		</section>
+
+		<section id="tutorial">
+			<h2>Tutorial</h2>
+			<ol>
+				<li>Using document methods to access elements:
+				<br>
+					<code class="codeblock">console.log(document.getElementByTagName("p"));</code><br>
+					This will return a list of the all &lt;p&gt; tag elements in the document with all the node attributes. You can even access each element using <code>document.getElementByTagName("p")[1]</code> as an array.(note: node lists may look like an array but isn't really one. Not all methods which come with an array object can be used with a node list.)
+				</li>
+			</ol>
+		</section>
+
+		<section id="examples">
+			<h2>Examples</h2>
+			<ul>
+				<li>Example 1<br>
+				Accessing the DOM element object and changing the innerHTML. Click on the code below to run the code:<br>
+				<a id="a"><code class="codeblock">document.getElementById("examples").innerHTML += "The example works!!!";</code></a>
+				</li>
+			</ul>
+			<script>
+				document.getElementById("a").addEventListener("click",function() {document.getElementById("examples").innerHTML += "<p>The example works!!!</p>";
+				})
+				document.getElementById("myDiagram").addEventListener("load",init());
+			</script>
+		</section>
+
+		<footer>
+			<div id="validator">
+				<ul>
+					<li><script type='text/javascript'> //<!--[CDATA[
+							document.write ("<a href='http://validator.w3.org/check?uri=" +
+							location.href+ "\;ss=1;verbose=1' target='display'>" +
+							"<img src='http://gblearn.com/comp1223/wp-content/uploads/2013/09/HTML5_Logo_256.png' " +
+							"width='50' height='50' border='0' " +
+							"alt='Valid HTML5.' " +
+							"title='Valid HTML5' /></a>")
+						//]]--></script></li>
+					<li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+					        <img style="border:0;width:88px;height:31px"
+					            src="http://jigsaw.w3.org/css-validator/images/vcss"
+					            alt="Valid CSS!" /></a></li>
+				</ul>
+				<p><script type='text/javascript'> //<![CDATA[
+				document.write
+				dt=new Date(document.lastModified);
+				document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+				//]]--></script></p>
+			</div>
+		</footer>
+	</body>
+</html>

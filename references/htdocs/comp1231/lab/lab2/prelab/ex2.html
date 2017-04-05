@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+--> <head>
+		<title>COMP 1231 Web Programming | Pre-lab 2 | Example 1</title>
+		
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1231 Web Programming Pre-lab 1 example 1'>
+		<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+
+		<script type="text/javascript">
+				function tables () {
+				var _div = document.getElementById("content");
+
+				var row = prompt("How many rows would you like for your table?")
+				var col = prompt("How many colomns would you like for you table?");
+
+				console.log(row);
+				console.log(col);
+
+				if (isNaN(row) || isNaN(col) || row === "" ||  col === "" ||row === null || col === null || row === " ") {
+					alert("Please input a valid number");
+				} else if (row < 0 || col < 0){
+					alert("Please only input positive numbers");
+				} else {
+					var output ="<table border='1'>\n"
+					for (var r = 1 ; r <= row ; r++){
+						output += "\t<tr>\n";
+						for (var c = 1 ; c <= col ; c++){
+							n = r * c;
+							output += "\t\t<td>" + n + "</td>\n";
+						}
+						output +="\t</tr>\n";
+					}
+					output += "</table>\n"
+					_div.innerHTML = output;
+				}								
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>COMP 1231 Web Programming - Pre-lab 2</h1>
+		
+		<nav><a href="index.html">Exercise 1</a> | Exercise 2</nav>
+		
+		<h2>Exercise 1 - – Multiplication Table</h2>
+		<button onclick="tables();">Click me!</button>
+		<div id="content"></div>
+
+		<script>
+			//<!--[CDATA[
+			document.write ("<br><a href='http://validator.w3.org/check?uri=" +
+				location.href +
+				"\;ss=1;verbose=1' target='display'>" +
+			"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+			"width='50' height='50' border='0' " +
+			"alt='Valid HTML5.' " +
+			"title='Valid HTML5' /></a><br>")
+			dt=new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+			dt.toLocaleString() + "</small>")
+			//]]-->
+		</script>
+	</body>
+</html>

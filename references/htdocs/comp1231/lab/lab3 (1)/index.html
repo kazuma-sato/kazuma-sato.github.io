@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+--> <head>
+		<title>COMP 1231 Web Programming | Lab Test 3</title>
+		
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1231 Web Programming Lab Test 3'>
+		<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+
+		<script>
+			function list(){
+				var input1 = parseInt(prompt("Please enter a number:"));
+				var input2 = parseInt(prompt("Please enter another number:"));
+				var input3 = parseInt(prompt("Please enter another number:"));
+				var input4 = parseInt(prompt("Please enter another number:"));
+				var input5 = parseInt(prompt("Please enter another number:"));
+				var input = [input1, input2, input3, input4, input5];
+
+				document.getElementById("output").innerHTML = "<br />"+input;
+			}
+		</script>
+
+	<body>
+		<h1>COMP 1231 Web Programming - Lab Test 3</h1>
+		<h2>Kazuma Sato 100 948 212</h2>
+		<nav><a href="prelab/">Pre-lab 3</a>/<nav>
+		<br>		
+		<button onclick="list();">Click Me!</button>
+		<br>
+		<div id="output"></div>
+		<hr>
+		<script>
+			//<!--[CDATA[
+			document.write ("<br><a href='http://validator.w3.org/check?uri=" +
+				location.href +
+				"\;ss=1;verbose=1' target='display'>" +
+			"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+			"width='50' height='50' border='0' " +
+			"alt='Valid HTML5.' " +
+			"title='Valid HTML5' /></a><br>")
+			dt=new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+			dt.toLocaleString() + "</small>")
+			//]]-->
+		</script>

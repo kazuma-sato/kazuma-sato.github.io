@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Kazuma Sato		kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+--> <head>
+		<title>JavaScript | Week 10 Lecture Practice</title>
+		
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1231 Web Programming Week 10 Practice'>
+		<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+
+		<script>
+		</script>
+	</head>
+
+	<body>
+		<div id="content"></div>
+		<script>
+		var p1 = {age: 20,
+				  name: "Maziar",
+				  walk: function(str){alert(str + 
+				  	" is walking. . .")}},
+				  dance: function(str){alert(this.name + " is dancing")},
+				  setInfo: function(str,num){
+				  	this.age = str;
+				  	this.name = num;
+				  	this.dance();
+				  }
+		var car = {color: "red",
+				   type: "van",
+				   brand: "toyota",
+				   run: function(){
+				   	alert("The " + this.color +
+				   		this.brand + this.brand +
+				   		"is running. . .")}
+				   };
+		car.run()
+
+		</script>
+	</body>
+</html>v

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Assignment 2 - Team Project
+
+Group 5
+Kazuma Sato				kazuma.sato@georgebrown.ca
+Adrian Hrendus			adrian.hrendus@georgebrown.ca
+Matt Vincent Manigbas	mattvincent.manigbas@georgebrown.ca
+Anitosh Chopra			anitosh.chopra@georgebrown.ca
+Harsimran Singh Bagri	harsimransingh.bagri@georgebrown.ca
+
+COMP 1223 Web Development Fundamentals CRN 13095
+Lab Instructor Abid Rana
+Lecture Instructor Maziar Masoudi
+--><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Assignment 2 | COMP 1223 Web Development Fundamentals</title>
+		<meta charset="utf-8">
+		<meta name="description" content="George Brown COMP 1223 Web Fundamentals HTML5 Group Project Assignment">
+		<meta name="keywords" content="George Brown, Assignment, HTML5, HTML, T141, CSS, CSS3, JavaScript">
+		<meta name="author" content="CRN13095 Group 5">
+
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+		<link rel="stylesheet" type="text/css" href="style.css">>
+
+		<style type="text/css">
+			#player {
+				width: 100%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Group 5 Tutorials</h1>
+			<h2>comp1223 crn13095</h2>
+			<nav id="siteNav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>Page 1</li>
+					<li><a href="page2.html">Page 2</a></li>
+					<li><a href="page3.html">Page 3</a></li>
+					<li><a href="page4.html">Page 4</a></li>
+					<li><a href="contact.html">Team Page</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<nav id="pageNav">
+			<ul>
+				<li><a href="#description">Description</a></li>
+				<li><a href="#tutorial">Tutorial</a></li>
+				<li><a href="#examples">Examples</a></li>
+			</ul>
+		</nav>
+
+		<section id="description">
+			<h1>Audio embedding with HTML5 and non-HTML5</h1>
+			<h2>by adrian hrendus</h2>
+			<p>This page will teach you how to embed an audio file into a web page using both HTML5 and non HTML5 methods.</p>
+			<p>Audio embedding is used when you want to provide a visitor with a recording without him/her having to leave your page to listen to it.</p>
+		</section>
+
+		<section id="tutorial">
+			<h2>Tutorial</h2>
+			<ol>
+				<li>
+				<strong>Use this code to embed an audio file to your page.</strong><br>
+					<code>&lt;audio controls="controls"&gt;<br>
+					 &nbsp;&nbsp;&nbsp;&lt;source src="yourURL.mp3"&gt;<br>
+					&lt;/audio&gt;</code>
+				</li>
+				<li><strong>If you want the audio to start playing as soon as the page loads add autoplay="" to your code.</strong><br>
+							<code>&lt;audio controls autoplay=""&gt;<br>
+							&nbsp;&nbsp;&nbsp;&lt;source src="yourURL.mp3"&gt;<br>
+							&lt;/audio&gt;</code>
+				</li>
+				<li><strong> The audio player can also be styled.</strong><br>
+				<code>&lt;audio id="player" controls autoplay=""&gt;<br>
+							&nbsp;&nbsp;&nbsp;&lt;source src="yourURL.mp3"&gt;<br>
+							&lt;/audio&gt;</code><br>
+					<strong>Now use CSS to change style.</strong><br>
+						#player {<br>
+						width: 100%;<br>
+						}​
+				</li>
+			</ol>
+		</section>
+
+		<section id="examples">
+			<h2>Examples</h2>
+			<ul>
+				<li>Example 1<br>
+				<code>&lt;audio controls="controls"&gt;<br>
+					 &nbsp;&nbsp;&nbsp;&lt;source src="audio/15%20-%20Stairway%20to%20Heaven.mp3"&gt;<br>
+					&lt;/audio&gt;</code><br>
+						<audio controls="controls">
+							<source src="audio/15%20-%20Stairway%20to%20Heaven.mp3">
+						</audio>
+				</li><li>Example 2<br>
+				<code>&lt;audio controls autoplay=""&gt;<br>
+							&nbsp;&nbsp;&nbsp;&lt;source src="audio/15%20-%20Stairway%20to%20Heaven.mp3"&gt;<br>
+							&lt;!-- now include flash fall back --&gt;<br>
+							&lt;/audio&gt;</code><br>
+					<audio controls  autoplay="">
+						<source src="audio/15%20-%20Stairway%20to%20Heaven.mp3">
+					</audio>
+				</li>
+				<li>Example 3<br>
+				<code>&lt;audio id="player" controls autoplay=""&gt;<br>
+							&nbsp;&nbsp;&nbsp;&lt;source src="audio/15%20-%20Stairway%20to%20Heaven.mp3"&gt;<br>
+							&lt;!-- now include flash fall back --&gt;<br>
+							&lt;/audio&gt;</code><br>
+					<audio id="player" controls  autoplay="">
+						<source src="audio/15%20-%20Stairway%20to%20Heaven.mp3">
+						<!-- now include flash fall back -->
+					</audio>
+			</ul>
+		</section>
+
+		<footer>
+			<div id="validator">
+				<ul>
+					<li><script type='text/javascript'> //<!--[CDATA[
+							document.write ("<a href='http://validator.w3.org/check?uri=" +
+							location.href+ "\;ss=1;verbose=1' target='display'>" +
+							"<img src='http://gblearn.com/comp1223/wp-content/uploads/2013/09/HTML5_Logo_256.png' " +
+							"width='50' height='50' border='0' " +
+							"alt='Valid HTML5.' " +
+							"title='Valid HTML5' /></a>")
+						//]]--></script></li>
+					<li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+					        <img style="border:0;width:88px;height:31px"
+					            src="http://jigsaw.w3.org/css-validator/images/vcss"
+					            alt="Valid CSS!" /></a></li>
+				</ul>
+				<p><script type='text/javascript'> //<![CDATA[
+				document.write
+				dt=new Date(document.lastModified);
+				document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+				//]]--></script></p>
+			</div>
+		</footer>
+	</body>
+</html>

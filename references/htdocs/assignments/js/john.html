@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Javascript Animation</title>
+   <h1 onclick="titleMove()"><div id="newfont">Javascript assignment</div></h1>
+    <hr style='border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));'>
+   
+   
+
+    <style>
+	table#table1
+    {
+	 align:right;
+	 text-align:center;
+	 margin: auto;
+	 }	
+	
+	h1
+	{
+	text-align:center;
+	}
+	
+	td#red
+	{
+	 box-shadow: 10px 10px 5px #888888;
+	 border-radius: 25px;
+	 background-color: white;
+	}
+	td#red:hover
+	{
+    background-color: lightgrey;
+	}
+	
+	td#blue
+	  {
+	    box-shadow: 10px 10px 5px #888888;
+	    border-radius: 25px;
+	    color:white;
+	    background-color: blue;
+	  }
+	
+	td#blue:hover
+	  {
+        background-color: #000066;
+	  }
+	
+	body 
+	{
+     background: -webkit-linear-gradient(left, white , blue); 
+     background: -o-linear-gradient(right, white, blue); 
+     background: -moz-linear-gradient(right, white, blue); 
+     background: linear-gradient(to right, white , blue); )
+    }
+	
+    #loop
+    {
+     background-color:red;
+    }
+   
+    ul 
+    {
+     text-align:center;
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+    } 
+
+    li 
+    {
+     width:50px;
+     display: inline;
+	 background-color:black;
+    }
+    a
+    {
+     line-height:2.5em;
+	 color:blue;
+	 text-decoration: none;
+	 font-size: 25px;
+	 font-weight: bold; 
+    }
+	
+	a#num1
+	{
+	color:white;
+	}
+	a#thing
+	{
+	
+	 display : block;
+  width:100px;
+  height:40px;
+	}
+	@font-face
+	{
+     font-family: customFont;
+     src: url(CodeBold.otf);
+    }
+
+    div#newfont 
+	{
+     font-family: customFont;
+    }
+	
+	
+	
+	div#newfont {
+    width: 15px;
+    height: 65px;
+    background: red;
+    position: relative;
+    -webkit-animation: mymove 25s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 25s infinite; }
+
+
+@-webkit-keyframes mymove {
+    from {left: -200px;}
+    to {left: 85%;}
+}
+
+@-webkit-keyframes mynewmove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+@keyframes mymove {
+    from {left: -200px;}
+    to {left: 85%;}
+}
+
+@keyframes mynewmove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+
+ hr.style-two
+ {
+   border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+ }
+ 
+  div#left
+  {
+  float:left;
+  }
+  div#right
+  {
+  margin-right:100px;
+  float:right;
+  }
+  
+  #bottum
+  {
+  margin-left:75px;
+  position: fixed; 
+  bottom: 0;
+  }
+   </style>
+   <script>
+   function titleMove() 
+   {
+    document.getElementById("newfont").style.WebkitAnimationPlayState = "paused";
+    document.getElementById("newfont").style.animationPlayState = "paused";
+   }
+
+     var duck;
+	  function init()
+	  {
+		duck = document.getElementById('duckImage');
+		duck.style.position= 'relative'; 
+		duck.style.left = '0px'; 
+      }
+	  
+      function moveRight()
+	  {
+        duck.style.left = parseInt(duck.style.left) + 10 + 'px';
+      }
+        window.onload =init;
+	  
+
+
+   </script>
+ </head>
+ <body>
+ 
+
+
+  <table border='0' id='table1'  height='50px'>
+    <tr>
+		<td id='blue' width='150px'><a href="index.html" id="num1" name='thing'>Home</a></td>
+		<td width='25px'></td>
+		<td id='red' width='150px'><a href="john.html" id="num2" name='thing'>John</a></td>
+	
+		<td width="25px"></td>
+	
+		<td id='blue' width='150px'><a href="kaz.html" id="num1" name='thing'>Kazuma</a></td>
+		<td width='25px'></td>
+		<td id='red' width='150px'><a href="#About" id="num2" name='thing'>About</a></td>
+	</tr>
+  </table>
+   
+   <div class="gradient"></div>
+   <div id='loop'></div>
+   
+  <hr style='border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));'>
+ <div id='left'>
+  <p><h2 style='text-align:center;'>JavaScript DOM Animation</h2>
+                        1. Add an image that you want to move and give it an id.<br>
+                        2. Make an button with an onclick that calls a function.<br>
+						3. Make a variable that equals document.getElementById("YOUR IMGAGES ID") <br>
+						3. Then make 2 functions, one for initialization, another for movement.<br>
+						4. In the initialization function add 2 lines<br>
+						  duck.style.position='relative'; <br>
+                          duck.style.left='0px'; <br>
+						5. In the movement function add   duck.style.left = parseInt(duck.style.left) + 10 + 'px'; <br>
+						6. Finaly add window.onload = inititialization function(); <br> 
+
+  <br>Useful when you want to make text or images move around the page. <br>
+  Works with onclick, onblur, onmouseover, onmouseout.
+
+  <br>At least 3 examples if applicable
+
+  <br><br>
+    <img id="duckImage" src="duck.jpg"  />
+    <form>
+      <input type="button" value="right" onclick="moveRight();"></input>
+    </form><br><br>
+  </div>
+  
+  <div id='right'>
+    <img src='DuckExampleScript.png'  ></img><br>
+    <img src='DuckExampleForm.png'></img>
+  </div>
+   <hr style='border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));'>
+   
+   <div id='bottum'>
+                           
+   <img src="http://www.w3.org/Icons/WWW/w3c_home_nb" alt="W3C" height="47" width="72">
+   <script > //<!--[CDATA[
+	document.write ("<a href='http://validator.w3.org/check?uri=" +
+	location.href+ "\;ss=1;verbose=1' target='display'>" +
+	"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+	"width='50' height='50' border='0' " +
+	"alt='Valid HTML5.' " +
+	"title='Valid HTML5' /></a>")
+	dt=new Date(document.lastModified);
+	document.write("<small>This page was last modified on " +
+	dt.toLocaleString() + "</small>")
+//]]--></script>
+</div>
+ </body>
+</html>

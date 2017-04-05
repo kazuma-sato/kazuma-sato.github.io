@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Assignment 1 - Team Project
+
+Group 1
+Kazuma Sato 	100948212	kazuma.sato@georgebrown.ca
+John Baumann 	100963202	john.baumann@georgebrown.ca
+
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+--> <head>
+		<title>Introduction to Animations with DOM Scripting | Assignment 1 | COMP 1231 Web Programming</title>
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1223 Web Programming JavaScript Group Project Assignment - Introduction to Animations with DOM Scriptiong using Timers and Animations'>
+		<meta name='keywords' content='George Brown, Assignment, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+		
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="page4.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+
+	</head>
+	<body>
+		<header>
+			<h1>Group 1 Tutorials</h1>
+			<h2>comp1231 crn47693</h2>
+			<nav id="siteNav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page1.html">DOM Intro</a></li>
+					<li><a href="page2.html">DOM Scripting</a></li>
+					<li><a href="page3.html">DOM Style Object</a></li>
+					<li>Animations Intro</li>
+					<li><a href="contact.html">Team Page</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<nav id="pageNav">
+			<ul>
+				<li><a href="#description">Description</a></li>
+				<li><a href="#tutorial">Tutorial</a></li>
+			</ul>
+		</nav>
+
+		<section id="description">
+			<h1>Introduction to Animations with DOM Scripting</h1>
+			<h2>by kazuma sato</h2>
+			<p>Animation with DOM scripting is essentially changing the style of a page with a timer or delay. There are many JavaScript frameworks to help developers include animations on their web pages and applications. This page is an introduction to animations with DOM scripting without the aid of these frameworks.</p>
+        </section>
+
+		<section id="tutorial">
+			<h2>Tutorial</h2>
+			
+			<ol>
+
+			<!--
+			
+				<li>
+				<p>Let's create an object in a <code>&lt;div&gt;</code> element we can move around by the changing the <code>style</code> property.</p>
+
+					<div id="movingSpace"><div id="movingBox"></div></div>
+				
+					<div id="boxControl">
+						<div id="up" class="controls"><a>up</a></div>
+						<div id="left" class="controls"><a>left</a></div>
+						<div id="right" class="controls"><a>right</a></div>
+						<div id="down" class="controls"><a>down</a></div>
+					</div>
+
+					<p>In the following code, I created functions for each button which gets the current value for the top or left property of the style object and adds or subtracts 10 from the value and reassigns the new value back to the property. I also stopped the incrementation of values when the box hits the edge of the outer <code>&lt;div&gt;</code> tag space.</p>
+					<p>Notice when the value from the <code>style.top</code> or <code>style.left</code> property is extracted, the string value needs to go through <code>parceInt()</code> for the calculation and then concatenated with <code>"px"</code> before reassigned back to the property. Not all properties allow you to do this this easily as you will see in the future example.</p>
+				
+					<code class="codeblock">
+					var box = document.getElementById("movingBox");<br>
+					box.style.top = "0px";<br>
+					box.style.left = "0px";<br>
+					<br>
+					document.getElementById("up").onclick = function(){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;if(box.style.top != "0px")<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box.style.top = parseInt(box.style.top) - 10 + "px";<br>
+					}<br>
+					document.getElementById("left").onclick = function(){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;if(box.style.left != "0px")<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box.style.left = parseInt(box.style.left) - 10 + "px";<br>
+					}<br>
+					document.getElementById("right").onclick = function(){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;if(box.style.left != "510px")<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box.style.left = parseInt(box.style.left) + 10 + "px";<br>
+					}<br>
+					document.getElementById("down").onclick = function(){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;if(box.style.top != "140px")<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box.style.top = parseInt(box.style.top) + 10 + "px";
+					</code>
+					<br>
+					<script>
+						(function() {
+							var box = document.getElementById("movingBox"),
+								space = document.getElementById("movingSpace");
+
+							
+							// Without assiging values to these properies, 
+							// future calcuations will return NaN + "px";
+							// Null + value == NaN
+							box.style.top = "5px";
+							box.style.left = "5px";
+
+							document.getElementById("up").onclick = function(){
+								if(parseInt(box.style.top) > 5)
+									box.style.top = parseInt(box.style.top) - 10 + "px";
+							};
+							document.getElementById("left").onclick = function(){
+								if(parseInt(box.style.left) > 5)
+									box.style.left = parseInt(box.style.left) - 10 + "px";
+							};
+							document.getElementById("right").onclick = function(){
+								if(parseInt(box.style.left) < space.offsetWidth - 155)
+									box.style.left = parseInt(box.style.left) + 10 + "px";
+							};
+							document.getElementById("down").onclick = function(){
+								if(parseInt(box.style.top) < 135)
+									box.style.top = parseInt(box.style.top) + 10 + "px";
+							};
+							}());
+					</script>
+				</li>
+
+			-->
+
+				<li>
+					Let's try moving an object back and forth within a <code>&lt;div&gt;</code> tag space. <code>window.setInterval()</code> is a function which will repeatedly call a function with a set interval in millisecons. This is a bit of an outdated method. A lot of frameworks can be easy to use efficiant animation engines.
+					<div id="animatedBoxSpace"><div id="animatedBox"></div></div>
+					<p><code>setInterval()</code> returns a intervalID can be used as an argument for <code>window.clearInterval()</code> to stop <code>setInterval()</code>.</p>
+					<pre class="codeblock">var speed = 17,
+		box = document.getElementById("animatedBox"),
+		space = document.getElementById("animatedBoxSpace"),
+		moveBox = function(moveBy) {		
+
+		// This	if statement allows the code to stop and 
+		// perform moveBox() in reverse
+		if ((moveBy > 0) && (parseInt(box.style.left) > space.offsetWidth - 150) || 
+		   ((moveBy < 0) && (parseInt(box.style.left) < 5))){
+			clearInterval(timer);
+			// by calling setInterval() with moveBox as an argument, 
+			// an infinite loop can occur for the animation
+			timer = setInterval(function() {
+				moveBox(moveBy * -1);
+			}, speed);
+		}
+		box.style.left = parseInt(box.style.left) + moveBy + "px";
+	};
+
+	box.style.left = "5px";
+
+	// This is the initial call of setInterval() with moveBox as an argument.
+	// note: to pass a function with an arugment as a variable, try
+	// creating an anon function with the function you actually want to call with
+	// it's argument in the body of the anon function.
+	var timer = setInterval(function() {
+		moveBox(2);
+	}, speed);</pre>
+					<script>
+						(function(){
+							var speed = 17,
+								box = document.getElementById("animatedBox"),
+								space = document.getElementById("animatedBoxSpace"),
+								moveBox = function(moveBy) {		
+
+								// This	if statement allows the code to stop and 
+								// perform moveBox() in reverse
+								if ((moveBy > 0) && (parseInt(box.style.left) > space.offsetWidth - 150) || 
+								   ((moveBy < 0) && (parseInt(box.style.left) < 5))){
+									clearInterval(timer);
+									// by calling setInterval() with moveBox as an argument, 
+									// an infinite loop can occur for the animation
+									timer = setInterval(function() {
+										moveBox(moveBy * -1);
+									}, speed);
+								}
+								box.style.left = parseInt(box.style.left) + moveBy + "px";
+							};
+
+							box.style.left = "5px";
+
+							// This is the initial call of setInterval() with moveBox as an argument.
+							// note: to pass a function with an arugment as a variable, try
+							// creating an anon function with the function you actually want to call with
+							// it's argument in the body of the anon function.
+							var timer = setInterval(function() {
+								moveBox(2);
+							}, speed);
+						})();
+					</script>
+				</li>
+
+				<li>
+				This is a tutorial for spinning the an object. By changing the <code>style.transform</code> property we can manipulate the object to do many things. Rotating is just one of them;
+					<div id="spinSpace"><div id="spinBox"></div></div>
+					<script>
+						(function(){
+							var box = document.getElementById("spinBox"),
+								space = document.getElementById("spinSpace"),
+								speed = 17,
+								rotateBy = 3,
+								spinBox = function(rotateDegree){
+									box.style.left = space.offsetWidth/2 - box.offsetWidth/2 + "px";
+
+									var string = "rotate(" + (parseInt(box.style.webkitTransform.replace("rotate(","")) + rotateBy ) +"deg)";
+
+									if (string == "rotate(90deg)")
+										string = "rotate(0deg)";
+
+									box.style.webkitTransform = string;
+								    box.style.mozTransform    = string; 
+								    box.style.msTransform     = string; 
+								    box.style.oTransform      = string; 
+								    box.style.transform       = string; 
+								};
+
+							box.style.webkitTransform = "rotate(0deg)";
+						    box.style.mozTransform    = "rotate(0deg)"; 
+						    box.style.msTransform     = "rotate(0deg)"; 
+						    box.style.oTransform      = "rotate(0deg)"; 
+						    box.style.transform       = "rotate(0deg)"; 
+
+							setInterval(function() {
+								spinBox(rotateBy);
+							}, speed);
+						})();
+					</script>
+					<pre class="codeblock">var box = document.getElementById("spinBox"),
+	space = document.getElementById("spinSpace"),
+	speed = 17,
+	rotateBy = 3,
+	spinBox = function(rotateDegree){
+		// This keeps the square centered
+		box.style.left = space.offsetWidth/2 - box.offsetWidth/2 + "px";
+
+		// style.transform property requires a function as its value. 
+		// To animate we need to change the argument of that function.
+		// To do that we need at least the name of that function needed to be removed, 
+		// so parseInt() will not work , which will allow to change the value and
+		// reconcatonate the string to apply to the property value.
+		var string = "rotate(" + 
+				     (parseInt(box.style.webkitTransform.replace("rotate(","")) + rotateBy ) +
+				     "deg)";
+
+		// The square only needs to repeate rotating from 0 to 90 degrees
+		// to appear it's rotating a full 360.
+		// This will stop the browser to store unnessarily alrge values when 
+		//  the function is in an infinate loop.
+		if (string == "rotate(90deg)")
+			string = "rotate(0deg)";
+
+		box.style.webkitTransform = string;
+	    box.style.mozTransform    = string; 
+	    box.style.msTransform     = string; 
+	    box.style.oTransform      = string; 
+	    box.style.transform       = string; 
+	};
+
+// Like in the previous example, a string needs to pre-exist before,
+// the function can change the string values.
+box.style.webkitTransform = "rotate(0deg)";
+box.style.mozTransform    = "rotate(0deg)"; 
+box.style.msTransform     = "rotate(0deg)"; 
+box.style.oTransform      = "rotate(0deg)"; 
+box.style.transform       = "rotate(0deg)"; 
+
+setInterval(function() {
+	spinBox(rotateBy);
+}, speed);</pre>
+				</li>
+
+				<li id="mouseoverspace">
+					Let's try having objects move like it's in a 3 dimentional space.
+					<div id="carouselSpace">
+						<div id="carousel">
+							<div id="red1"></div>
+							<div id="white1"></div>
+							<div id="blue1"></div>
+							<div id="yellow1"></div>
+							<div id="red2"></div>
+							<div id="white2"></div>
+							<div id="blue2"></div>
+							<div id="yellow2"></div>
+						</div>
+					</div>
+
+					<script>
+						(function(){
+							// variables for controls				
+							var degreesRotateBy = 1,
+							    animationInterval = 17,
+								xorigin = -50,
+								yorigin = -100,
+								
+								space = document.getElementById("carouselSpace"),
+					    		carousel = document.getElementById("carousel"),
+					    		boxes = [document.getElementById("red1"),
+					            		 document.getElementById("blue1"),
+					    		  		 document.getElementById("white1"),
+					    		 		 document.getElementById("yellow1"),
+					    		 		 document.getElementById("red2"),
+					    		 		 document.getElementById("blue2"),
+					    		 		 document.getElementById("white2"),
+					    		 		 document.getElementById("yellow2")],
+					    		timerID;
+
+
+
+
+							    function spinCarousel(degrees, interval) {
+									
+							    	if (boxes[1].style.zIndex == ""){
+										for(var i = 0; i < boxes.length; i++){											
+											boxes[i].angles = (Math.PI * 2) / boxes.length * i;
+											
+											boxes[i].topValue = Math.sin(boxes[i].angles) * (space.offsetHeight * 0.1) + yorigin;
+											
+											boxes[i].style.top = boxes[i].topValue + "px";
+											boxes[i].style.left = Math.cos(boxes[i].angles) * (space.offsetWidth * 0.4) + xorigin +"px";											
+											
+											boxes[i].style.zIndex = boxes[i].topValue;
+
+										}
+									}
+
+									timerID = setInterval((function(){
+										carousel.style.left = space.offsetWidth / 2 + "px";
+							    		carousel.style.top = space.offsetHeight / 1.5 + "px";
+											
+										for(var i = 0; i < boxes.length; i++){
+											boxes[i].angles += degrees * (Math.PI /180);
+
+											boxes[i].topValue = Math.sin(boxes[i].angles) * (space.offsetHeight * 0.1) + yorigin;
+											
+											boxes[i].style.zIndex = boxes[i].topValue;
+											boxes[i].style.top = boxes[i].topValue + "px";
+											boxes[i].style.left = Math.cos(boxes[i].angles) * (space.offsetWidth * 0.4) + xorigin + "px";
+											boxes[i].boxSize = (boxes[i].topValue / 576 * 300) + 150;
+											
+											boxes[i].style.width = boxes[i].boxSize + "px";
+											boxes[i].style.height = boxes[i].boxSize + "px";
+										}
+										console.log(boxes[0].zIndex)
+									}), interval);
+								}
+
+							spinCarousel(degreesRotateBy, animationInterval);
+
+							document.getElementById("mouseoverspace").onmouseover = function(){
+								clearInterval(timerID);
+								timerID = spinCarousel((degreesRotateBy / 5), animationInterval);
+							};
+							document.getElementById("mouseoverspace").onmouseout = function(){
+								clearInterval(timerID);
+								timerID = spinCarousel(degreesRotateBy, animationInterval);
+							};							
+						})();
+					</script>
+					<p>This is quite a bit more complicated. In the body of the if statment, by using the number of elements in they array, The starting point of each element is created. By using the Math.sin() method and Math.cos() the style.top and style.left values are assigned.</p>
+					<p>Once in the setInterval() method, the global variable degree is converted from compass degree to radiant and finaly added to the top and left. By using the offsetWidth and offsetHeight property of the larger div tag, I can have the carousel dynamic to the pagesize. Different ratios are applied to each property to give the animation a feeling of depth.</p>
+					<p>Bacause the derivative of the boxes' style.top is a sine wave, I used that to enlarge and shirtink the boxes to add a more three dimentional effect.</p>
+					<p>I also added a couple of mouse eventlisteners to the div tag element so when the mouse when into the frame, the animation slowed down to 20% speed and back to normal speed on mouseout.</p>
+					<pre class="codeblock">// variables for controls				
+var degreesRotateBy = 1,
+    animationInterval = 17,
+	xorigin = -75,
+	yorigin = -100,
+	
+	space = document.getElementById("carouselSpace"),
+	carousel = document.getElementById("carousel"),
+	boxes = [document.getElementById("red1"),
+    		 document.getElementById("blue1"),
+	  		 document.getElementById("white1"),
+	 		 document.getElementById("yellow1"),
+	 		 document.getElementById("red2"),
+	 		 document.getElementById("blue2"),
+	 		 document.getElementById("white2"),
+	 		 document.getElementById("yellow2")],
+	angles = new Array(boxes.length),
+	size,
+	timerID;
+
+
+    function spinCarousel(degrees, interval) {
+		
+    	if (boxes[1].style.zIndex == ""){
+			for(var i = 0; i < boxes.length; i++){
+				angles[i] = (Math.PI * 2) / boxes.length * i;
+
+				boxes[i].style.left = Math.cos(angles[i]) * 
+					(document.getElementById("carouselSpace").offsetWidth * 0.4) + xorigin +"px";
+				boxes[i].style.top = Math.sin(angles[i]) * 
+					(document.getElementById("carouselSpace").offsetHeight * 0.1) + yorigin + "px";
+				boxes[i].style.zIndex = parseInt(boxes[i].style.top);
+			}
+		}
+
+		timerID = setInterval((function(){
+			var size;
+			carousel.style.left = space.offsetWidth / 2 + "px";
+    		carousel.style.top = space.offsetHeight / 1.5 + "px";
+			
+			for(var i = 0; i < boxes.length; i++){
+				angles[i] += degrees * (Math.PI /180);
+
+				boxes[i].style.left = Math.cos(angles[i]) * 
+					(document.getElementById("carouselSpace").offsetWidth * 0.4) + xorigin + "px";
+				boxes[i].style.top = Math.sin(angles[i]) * 
+					(document.getElementById("carouselSpace").offsetHeight * 0.1) + yorigin + "px";
+				boxes[i].style.zIndex = parseInt(boxes[i].style.top);
+				size = (parseInt(boxes[i].style.top) / 576 *300) + 150 + "px";
+				boxes[i].style.width = size;
+				boxes[i].style.height = size;
+			}
+		}), interval);	
+	}
+
+spinCarousel(degreesRotateBy, animationInterval);
+
+document.getElementById("mouseoverspace").onmouseover = function(){
+	clearInterval(timerID);
+	spinCarousel((degreesRotateBy / 5), animationInterval);
+};
+document.getElementById("mouseoverspace").onmouseout = function(){
+	clearInterval(timerID);
+	spinCarousel(degreesRotateBy, animationInterval);
+};</pre>
+				</li>			
+			</ol>
+		</section>
+
+		<footer>
+			<div id="validator">
+				<ul>
+					<li><script type='text/javascript'> //<!--[CDATA[
+							document.write ("<a href='http://validator.w3.org/check?uri=" +
+							location.href+ "\;ss=1;verbose=1' target='display'>" +
+							"<img src='http://gblearn.com/comp1223/wp-content/uploads/2013/09/HTML5_Logo_256.png' " +
+							"width='50' height='50' border='0' " +
+							"alt='Valid HTML5.' " +
+							"title='Valid HTML5' /></a>")
+						//]]--></script></li>
+					<li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+					        <img style="border:0;width:88px;height:31px"
+					            src="http://jigsaw.w3.org/css-validator/images/vcss"
+					            alt="Valid CSS!" /></a></li>
+				</ul>
+				<p><script type='text/javascript'> //<![CDATA[
+				document.write
+				dt=new Date(document.lastModified);
+				document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+				//]]--></script></p>
+			</div>
+		</footer>
+	</body>
+</html>

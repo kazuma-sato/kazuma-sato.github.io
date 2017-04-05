@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<!--
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+-->
+
+<head>
+	<title>COMP 1231 Web Programming | Pre-lab 4 | Example 2</title>
+
+	<meta charset='utf-8'>
+	<meta name='description' content='George Brown COMP 1231 Web Programming Pre-lab 4 example 2'>
+	<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+	<meta name='author' content='Kazuma Sato'>
+
+	<style>
+	</style>
+
+	<script>
+		
+	</script>
+</head>
+
+<body>
+	<h1>COMP 1231 Web Programming - Pre-lab 4</h1>
+
+	<nav><a href="index.html">Exercise 1</a> | Exercise 2 | <a href="ex3.html">Exercise 3</a>
+	</nav>
+
+	<h2>Exercise 2 - Multidimensional Array</h2>
+	<hr>
+	<div id="content"></div>
+	<script>
+		var book1 = ["The Hitchhiker's Guide to the Galaxy",
+					"Douglas Adams",
+					200]
+
+		var book2 = ["The Time Machine",
+					"H.G. Wells",
+					123];
+
+		var book3 = ["The Invisible Man",
+					"H.G. Wells",
+					176];
+
+		var book4 = ["1984",
+					"George Orwell",
+					326];
+
+		var book5 = ["Fahrenheit 451",
+					"Ray Bradbury",
+					179];
+
+		var book6 = ["The Catcher in the Rye",
+					"J.D. Salinger",
+					174];
+
+		var book7 = ["Watchmen",
+					"Alan Moore, Dave Gibbons",
+					416];
+
+		var book8 = ["V for Vendeta",
+					"Alan Moore, David Lloyd",
+					288];
+
+		var book0 = ["Batman: The Killing Joke",
+					"Alan Moore, Brian Bolland",
+					46];
+
+		var scienceFiction = [book1, book2, book3, book4];
+		var fiction = [book5, book6];
+		var graphicNovels = [book7, book8, book0];
+
+		var shelf0 = ["Science Fiction", scienceFiction];
+		var shelf1 = ["Fiction", fiction];
+		var shelf2 = ["Graphic Novels", graphicNovels];
+
+		var store = [shelf0, shelf1, shelf2];
+
+		var output = "<ol>\n";
+		for (i in store){
+			output += "\t<li>" + store[i][0] + "\n"+
+			          "\t\t<ol>\n";
+			for (x in store[i][1]){
+				output += "\t\t\t<li>" + store[i][1][x][0] + "\n" + 
+						  "\t\t\t\t<ul>\n" + 
+						  "\t\t\t\t\t<li>by " + store[i][1][x][1] + "</li>\n" +
+						  "\t\t\t\t\t<li>" + store[i][1][x][2] + " pages</li>\n" +
+						  "\t\t\t\t</ul>\n" +
+						  "\t\t\t</li>\n";
+			}
+			if (x = store[i][1].length){
+				output += "\t\t</ol>\n";
+			}
+		}
+
+		output +="</li>\n";
+		
+		output += "</ol>";
+
+		document.getElementById("content").innerHTML = output;
+	</script>
+	<footer>
+		<hr>
+		<script>
+			//<!--[CDATA[
+			document.write("<br><a href='http://validator.w3.org/check?uri=" +
+				location.href +
+				"\;ss=1;verbose=1' target='display'>" +
+				"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+				"width='50' height='50' border='0' " +
+				"alt='Valid HTML5.' " +
+				"title='Valid HTML5' /></a><br>")
+			 dt = new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+			 //]]-->
+		</script>
+	</footer>
+</body>
+
+</html>

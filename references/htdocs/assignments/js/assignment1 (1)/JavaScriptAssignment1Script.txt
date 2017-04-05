@@ -1,0 +1,18 @@
+ 1.  Add an image that you want to move and give it an id.
+ 
+ 2. Make an button with an onclick that calls a function.  You can add the onclick feature to the image itself or the hole page if you want im just doing a button for this example.
+ 
+ 3. Make a variable that equals document.getElementById("YOUR IMGAGES ID") , use the id from the image created in step 1 and assign it to a variable using variable equals document.getElementById
+ 
+
+ 4. Then make 2 functions, one for initialization, another for movement. in this example they are named init and moveRight.
+ 
+ 5.add 2 lines to the initialization the function.
+ Setting the position to relative makes the image movable while still holding a place for it on the page.
+ I chose to start at the left but you can initialize it to wherever you want the image to start.
+ 
+ 6. In the movement function add   duck.style.left = parseInt(duck.style.left) + 10 + 'px';  
+    The parseInt duck.style.left gets the value in pixels of how far left the image is. then you add on the number of pixels that you want it to move by. 
+    By adding on more pixels to the style.left it will push the image further and further to the right of the page as you push the button.
+ 
+ 7 . Finaly add window.onload = inititialization function();   Used so that as soon as the page loads up it will initialize the duck image and make it possible to move.

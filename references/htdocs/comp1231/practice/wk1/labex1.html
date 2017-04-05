@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+Kazuma Sato		kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+--> <head>
+		<title>JavaScript | Week 1 Practice</title>
+
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1231 Web Programming Week 1 Practice'>
+		<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+
+		<style type="text/css" >
+			form {
+				border: .25em solid black;
+				border-color: .25;
+				padding: 2em;
+				padding-left: 10em;
+				text-align: right;
+			}
+			input {
+				margin-left: 1em;
+				margin-bottom: .5em;
+				display:block;
+			}
+			label{
+				float:left;
+			}
+			#submit {
+				display: inline;
+			}
+			#reset {
+				display: inline;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<form method="post">
+			<h2>User Registration</h2>
+
+			<script type="text/javascript">
+				function hello() {
+					var firstName = document.getElementById("firstName").value;
+					alert("Hello " + firstName);
+				}
+			</script>
+
+			<label>First Name:</label> <input type="text" id="firstName" />
+			<label>Last Name:</label> <input type="text" id="lastName" />
+			<label>Email:</label> <input type="email" id="email" />
+			<label>Password:</label> <input type="password" id="password" />
+			<label>Subscribe to Newsletter?</label> <input type="checkbox" id="newsletter" />
+			<select name="month">
+				<option value="January">January</option>
+				<option value="February">February</option>
+			</select>
+			<select name="day">
+				<script type="text/javascript">
+					for (var day = 1; day >= 31; day++) {
+						document.write("<option value=\"" + day + "\">" + day + "</option>");
+					};
+				</script>
+			</select>
+			<input type="submit" id="submit" onclick="hello();"/> <input type="reset" id="reset" />
+
+		</form>
+	</body>
+</html>

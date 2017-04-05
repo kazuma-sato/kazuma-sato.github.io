@@ -1,0 +1,222 @@
+/*
+Assignment 1 - Team Project
+
+Group 1
+Kazuma Sato 	100948212	kazuma.sato@georgebrown.ca
+John Baumann 	100963202	john.baumann@georgebrown.ca
+
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+
+Sunday, April 5, 2015
+*/ 
+
+/*reset */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*Page layout*/
+
+body {
+	width:85%;
+	max-width:96em;
+	font-size:62.5%;
+	background-color: #333333;
+	margin: 2em auto 2em auto;
+}
+header {
+	width: 100%;
+	display: inline-block;
+	/*height:2em;*/
+	border-width: 1px;
+	border-top-style: solid;
+	border-color: white;
+}
+	header h1, header h2{
+		display: inline-block; !important;
+	}
+	#siteNav{
+		margin: 1em 0 0 0;
+		padding:.5em;
+		border-width: 1px;
+		border-bottom-style: solid;
+		border-color: white;
+		}
+		#siteNav li{
+			display:inline;
+			padding:.5em 1.5em;
+			margin: 1em 0;
+		}
+	#pageNav{
+		padding:.5em;
+		margin: 1em
+		}
+		#pageNav li{
+			display:inline;
+			padding:.5em 2em;
+		}
+section{
+	margin-bottom: 1em;
+}
+	section h1, section h2 {
+		display: inline-block; !important;
+	}
+table{
+	width: 85%;
+	margin: .5em;
+}
+	tr{
+	border-top-style: solid;
+	}
+	td{
+		padding: .25em
+	}
+ul{}
+	section ul{
+		margin-top: .25em;
+		margin-bottom: .75em;
+		margin-left: 2em;		
+	}
+	section ol {
+		margin-left: 2em;
+	}
+	section ul li {
+		list-style-position:outside;
+	}
+	section ol li {
+		padding-left:1em;
+		list-style-position: outside;
+	}
+footer{
+	border-width: 1px;
+	border-top-style: solid;
+	border-color: white;
+}
+	footer ul {
+	margin: 10px 0 5px 0;
+	}
+	footer li {
+		display: inline;
+	}
+
+
+/*Text formatting*/
+
+h1{}
+	header h1 {
+		font-family: "Roboto Slab", Times, serif;
+		font-size: 36px;
+		color: #E05151;
+	}
+	header h2 {
+		font-family: "Roboto Slab", Times, serif;
+		font-size: 32px;
+		color: white;
+		margin-left: .25em;
+	}
+	section h1 {
+		margin-top: .5em;
+		font-family: "Roboto Slab", Times, serif;
+		font-size: 28px;
+		color: #E05151;
+	}
+	section h2 {
+		font-family: "Roboto Slab", Times, serif;
+		font-size: 24px;
+		color: white;
+	}
+	#description h2{
+		margin-left: .25em;
+	}
+a{	
+	font-family: "Roboto Slab", Times, serif;
+	font-size: 14px;
+	color:white;
+	text-decoration: none;
+}
+	a:link{
+		color: white;
+	}
+	a:hover{
+		text-decoration: underline;
+		color:#d9411e;
+	}
+	a:active{
+		text-decoration: underline;
+		color:#FFD452;
+	}
+	a:visited{
+		color:#75a3d1;
+		}
+	#pageNav a{
+		font-size: 17px;
+	}
+	#siteNav a{
+		font-size: 17px;
+	}
+	table a {
+		font-size: 16px;
+	}
+	code a {
+		font-family: "Source Code Pro", Courier, monospace
+	}
+p{}
+	section p {
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: normal;
+		color: white;
+		margin-bottom: 1em
+
+	}
+	footer p {
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-size: 10px;
+		color: white;
+	}
+	code {
+		font-family: "Source Code Pro", Courier, monospace
+	}
+		.codeblock {
+			display: block;
+			background-color: #555555;
+			padding: 1em;
+		}
+ul{}
+	#siteNav ul li {
+		font-family: "Roboto Slab", Times, serif;
+		font-size: 17px;
+		color: #E05151;
+	}
+	section li {
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-size: 14px;
+		color: white;
+
+	}
+table{
+	width: 100%
+}
+	th{
+		text-align: left;
+		font-weight: bold;
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-size: 14px;
+		color: white;
+	}
+	td{
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-size: 14px;
+		color: white;
+	}
+pre {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

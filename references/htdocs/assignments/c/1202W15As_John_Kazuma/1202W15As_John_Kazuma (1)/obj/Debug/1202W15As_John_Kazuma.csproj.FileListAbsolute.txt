@@ -1,0 +1,5 @@
+D:\Google Drive\Desktop\assignments\c\1202W15As_John_Kazuma\1202W15As_John_Kazuma\bin\Debug\1202W15As_John_Kazuma.exe.config
+D:\Google Drive\Desktop\assignments\c\1202W15As_John_Kazuma\1202W15As_John_Kazuma\bin\Debug\1202W15As_John_Kazuma.exe
+D:\Google Drive\Desktop\assignments\c\1202W15As_John_Kazuma\1202W15As_John_Kazuma\bin\Debug\1202W15As_John_Kazuma.pdb
+D:\Google Drive\Desktop\assignments\c\1202W15As_John_Kazuma\1202W15As_John_Kazuma\obj\Debug\1202W15As_John_Kazuma.exe
+D:\Google Drive\Desktop\assignments\c\1202W15As_John_Kazuma\1202W15As_John_Kazuma\obj\Debug\1202W15As_John_Kazuma.pdb

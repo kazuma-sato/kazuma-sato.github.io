@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+
+-->
+<head>
+	<title>COMP 1231 Web Programming | Pre-lab 6 | Example 2</title>
+
+	<meta charset='utf-8'>
+	<meta name='description' content='George Brown COMP 1231 Web Programming Pre-lab 5 example 1'>
+	<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+	<meta name='author' content='Kazuma Sato'>
+
+	<style>		
+	</style>
+
+	<script>		
+	</script>
+</head>
+
+<body>
+	<h1>COMP 1231 Web Programming - Pre-lab 6</h1>
+
+	<nav><a href="index.html">Exercise 1 </a>| Exercise 2 </nav>
+
+	<h2>Exercise 2 - Interactive Gallery</h2>
+	<hr>	
+	
+	<img src="images/latte1.jpg" alt="latte art" height="200" width="200" onclick="doubleImageSize(this);" onmouseover="addBorder(this);" onmouseout="removeBorder(this); revertImageSize(this);">
+	<img src="images/latte2.jpg" alt="latte art" height="200" width="200" onclick="doubleImageSize(this);" onmouseover="addBorder(this);" onmouseout="removeBorder(this); revertImageSize(this);">
+	<img src="images/latte3.jpg" alt="latte art" height="200" width="200" onclick="doubleImageSize(this);" onmouseover="addBorder(this);" onmouseout="removeBorder(this); revertImageSize(this);"><br>
+ 	<img src="images/latte4.jpg" alt="latte art" height="200" width="200" onclick="doubleImageSize(this);" onmouseover="addBorder(this);" onmouseout="removeBorder(this); revertImageSize(this);">
+ 	<img src="images/latte5.jpg" alt="latte art" height="200" width="200" onclick="doubleImageSize(this);" onmouseover="addBorder(this);" onmouseout="removeBorder(this); revertImageSize(this);">
+ 	<img src="images/latte6.jpg" alt="latte art" height="200" width="200" onclick="doubleImageSize(this);" onmouseover="addBorder(this);" onmouseout="removeBorder(this); revertImageSize(this);">
+
+	<script>
+		function doubleImageSize(img){
+			img.setAttribute("height", parseInt(img.getAttribute("height")) * 2);
+			img.setAttribute("width", parseInt(img.getAttribute("width")) * 2);
+		}
+		function addBorder(img){
+			img.style.border = "1px solid #" + Math.floor(Math.random() * 16777215).toString(16);			
+		}
+		function removeBorder(img){
+			img.style.border = "initial";
+		}
+		function revertImageSize(img){
+			img.setAttribute("height", 200);
+			img.setAttribute("width", 200)
+		}
+	</script>
+	
+	<footer>
+		<hr>
+		<script>
+			//<!--[CDATA[
+			document.write("<br><a href='http://validator.w3.org/check?uri=" +
+				location.href +
+				"\;ss=1;verbose=1' target='display'>" +
+				"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+				"width='50' height='50' border='0' " +
+				"alt='Valid HTML5.' " +
+				"title='Valid HTML5' /></a><br>")
+			 dt = new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+			 //]]-->
+		</script>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+<!--
+2. Create the basic HTML5 structure including:
+	a. A title ("Lab Test 1"), the charset, meta description, meta author and meta keywords.-->
+		<title>Lab Test 1 | COMP 1223 | Web Fundamentals</title>
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown Web Fundametals Lab Test 1'>
+		<meta name='keywords' content='GBLearn,HTML5,Lab,Test'>
+		<meta name='author' content='Kazuma Sato'>
+	</head>
+<!--
+3. Inside the body, add the following:-->
+	<body>
+<!--
+	a. Level 1 header stating you name and student ID-->
+		<h1>Kazuma Sato | 100 948 212</h1>
+<!--
+	b. Level 2 header stating the course code and CRN-->
+		<h2>COMP 1223 | CRN 13095</h2>
+<!--
+	c. Paragraph that says, "This is a paragraph."-->
+		<p>This is a paragraph.</p>
+<!--
+	d. list(s) like the following:-->
+		<ul>
+			<li>List Item 1
+				<ol type="A">
+					<li>Second Level</li>
+				</ol>
+			</li>
+			<li>List Item 2
+				<ol type="I">
+					<li>Second Level
+							<ol type="i">
+								<li>Third Level
+									<ol type="a">
+										<li>Forth Level</li>
+									</ol>
+								</li>
+							</ol>
+					</li>
+				</ol>
+		</ul>
+		<a href="prelab/images/image.jpg" target="_blank"><img src="prelab/images/image.jpg" alt="Kazuma Sato" height="300" width="300"></a>
+<!--
+	e. A third level header that says, "This page is good & valid!" (you must use character references).-->
+		<h3>This page is good &amp; valid!</h3>
+<!--
+	f.The validation code.-->
+		<script type='text/javascript'> //<!--[CDATA[
+	document.write ("<a href='http://validator.w3.org/check?uri=" +
+	location.href+ "\;ss=1;verbose=1' target='display'>" +
+	"<img src='http://gblearn.com/comp1223/wp-content/uploads/2013/09/HTML5_Logo_256.png' " +
+	"width='50' height='50' border='0' " +
+	"alt='Valid HTML5.' " +
+	"title='Valid HTML5' /></a>")
+	dt=new Date(document.lastModified);
+	document.write("<small>This page was last modified on " +
+	dt.toLocaleString() + "</small>")
+//]]--></script>
+	</body>
+<!-- Kaz -->
+</html>

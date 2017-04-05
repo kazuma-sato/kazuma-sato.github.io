@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+
+Kazuma Sato	kazuma.sato@georgebrown.ca 100 948 212
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+
+--> <head>
+		<title>JavaScript | Week 8 Lecture Practice</title>
+		
+		<meta charset='utf-8'>
+		<meta name='description' content='George Brown COMP 1231 Web Programming Week 3 Practice'>
+		<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+		<meta name='author' content='Kazuma Sato'>
+
+		<script>
+		</script>
+	</head>
+
+	<body>
+		<form name="myform" onsubmit="_change(this);">
+			<input type="textbox" name="url" value="true">
+			<input type="submit">
+				   
+		</form>
+		<div id="content"></div>
+		<script>
+			
+			function _change(element){
+				element.action = form.elements.url.value;
+				return true;
+			}
+		</script>
+	</body>
+</html>

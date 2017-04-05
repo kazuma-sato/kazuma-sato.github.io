@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	<style type="text/css">
+		fieldset{
+			width: 75%;
+			max-width: 23em;
+			margin: 0 auto;
+		}
+		label {
+			text-align: right;
+			display: inline-block;
+			width: 10em;
+		}
+		input, select {
+			text-align: center;
+			width: 10em;
+		}
+		input[type="submit"]{
+
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+	</head>
+
+
+	
+	<body>
+		<form method="POST">
+			<fieldset>
+				<legend>Visitor Parking Permit Application</legend>
+				
+				<label for="name">Visitor's Name:</label>
+				<input type="text" name="name"/>
+				<br>
+				<label for="phone">Phone Number:</label>
+				<input type="number" name="phone" />
+				<br>
+				<label for="car">Vehicle's Brand:</label>
+				<input type="text" name="car" />
+				<br>
+				<label for="colour">Vehicle's Colour:</label>
+				<select name="color" id="selectColor">
+					<option>White</option>
+					<option>Black</option>
+					<option>Silver</option>
+					<option>Grey</option>
+					<option>Red</option>
+					<option>Blue</option>
+					<option>Brown</option>
+					<option>Yellow</option>
+					<option>Green</option>
+					<option id="otherOption">Other</option>				
+				</select>
+				<label for="otherColor" id="otherColorLable" style="visibility:hidden">Please Specify:</label>
+				<input type="hidden" name="otherColor" id="otherColor"/>
+				<br>
+				<label for="licence">Licence Plate Number:</label>
+				<input type="text" name="licence" />
+				<br>
+				<label for="suite">Suite Visitor is Visiting:</label>
+				<input type="number" name="suite">
+				<br>
+				<label for="signinDate">Visitor Vehicle Sign-in Date:</label>
+				<input type="date" name="signinDate" id="inDate"/> 
+				<br>
+				<label for="signinTime">Time:</label>
+				<input type="time" name="signinTime" id="inTime">
+				<br>
+				<label for="signinDate">Visitor Vehicle Sign-out Date:</label>
+				<input type="date" name="signinDate" id="outDate"/> 
+				<br>
+				<label for="signinTime">Time:</label>
+				<input type="time" name="signinTime"id="outTime">
+				<br>
+				<input type="submit" id="sumbit">
+			</fieldset>
+		</form>	
+	</body>
+	<script type="text/javascript">
+		// for allowing a text input to become visable. 
+		var selectColor = document.getElementById("selectColor");
+		var otherColor = document.getElementById("otherColor");
+		var otherColorLable = document.getElementById("otherColorLable");
+		var inDate = document.getElementById("inDate");
+		var outDate = document.getElementById("outDate");
+		var inTime = document.getElementById("intime");
+		var outTime = document.getElementById("outTime");
+
+
+		selectColor.addEventListener("change", 
+			function otherSelected(){
+				if (selectColor.selectedIndex == 9){
+					otherColorLable.style.visibility = "visible";
+					otherColor.type = "text";
+				} else {
+					otherColorLable.style.visibility = "hidden";
+					otherColor.type = "hidden";
+				}
+			});		
+		otherColor.addEventListener("change",
+				(function(){
+					document.getElementById("otherOption").value = otherColor.value;
+				}));
+		function checkDuration(){
+			var signin = new Date(inDate + " " + inTime);
+			var signout = new Date(outDate+ " " + outTime);
+			if (signout - signin == 28800000){
+				console.log("This Works!")
+			}
+		}
+		outTime.addEventListener("change", checkDuration);
+		
+	</script>
+</html>

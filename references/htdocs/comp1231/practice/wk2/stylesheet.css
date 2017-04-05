@@ -1,0 +1,22 @@
+/*
+form {
+	border: .25em solid black;
+	border-color: .25;
+	padding: 2em;
+	padding-left: 10em;
+	text-align: right;
+}
+input {
+	margin-left: 1em;
+	margin-bottom: .5em;
+	display:block;
+}
+label{
+	float:left;
+}
+#submit {
+	display: inline;
+}
+#reset {
+	display: inline;
+}

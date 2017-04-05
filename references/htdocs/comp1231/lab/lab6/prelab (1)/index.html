@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us"><!--
+
+Kazuma Sato 100948212 kazuma.sato@georgebrown.ca
+COMP 1231 Web Programming CRN 47693
+Lab Instructor Jason Carman
+Lecture Instructor Maziar Masoudi
+
+-->
+<head>
+	<title>COMP 1231 Web Programming | Pre-lab 6 | Example 1</title>
+
+	<meta charset='utf-8'>
+	<meta name='description' content='George Brown COMP 1231 Web Programming Pre-lab 5 example 1'>
+	<meta name='keywords' content='George Brown, Lab, HTML5, HTML, T127, CSS, CSS3, JavaScript'>
+	<meta name='author' content='Kazuma Sato'>
+
+	<style>
+		
+	</style>
+
+	<script>
+		
+	</script>
+</head>
+
+<body>
+	<h1>COMP 1231 Web Programming - Pre-lab 6</h1>
+
+	<nav>Exercise 1 |<a href="ex2.html"> Exercise 2 </a></nav>
+
+	<h2>Exercise 1 - Form Validation</h2>
+	<hr>	
+	<form name ="form" id="form" action="post" onsubmit="inputSummary(hasFormCriteriaMet()); return false;">
+		<lable>First name: </lable><input type="text" name="firstName" id="firstName" onfocus="removeStyling(this);" onblur="firstNameFieldValidation();"><br>
+		<lable>Last name: </lable><input type="text" name="lastName" id="lastName" onfocus="removeStyling(this);" onblur="lastNameFieldValidation();"><br>
+		<lable>email address: </lable><input type="text" id="email" onfocus="removeStyling(this);" onblur="emailFieldValidation();  "><br>
+		<lable>Password: </lable><input type="password" id="password" onfocus="removeStyling(this);" onblur="passwordFieldValidation();"><br>
+		<lable>Confirm password </lable><input type="password" onfocus="removeStyling(this);" id="passwordConfirm" onblur="confirmPassFieldValidation()")><br>
+		<lable>Payment type: </lable>
+		<select id="payment" onfocus="removeStyling(this);" onblur="paymentFieldValidation()">
+			<option></option>
+			<option>Weekly</option>
+			<option>Monthly</option>
+			<option>Annual</option>
+		</select><br>
+		<input type="submit" id="submit">
+	</form>
+	<br>
+	<div id="output"></div>
+	
+	<script>
+		var form = document.getElementById("form"),
+			firstName = document.getElementById("firstName"),
+			lastName = document.getElementById("lastName"),
+			email = document.getElementById("email"),
+			password = document.getElementById("password"),
+			passConfirm = document.getElementById("passwordConfirm"), 
+			payment = document.getElementById("payment"),			
+			output = document.getElementById("output");
+		
+		// Functions for the Field Validation
+		function outputWithDuplicateCheck(string){
+			if (output.innerHTML.search(string) == -1) 
+				output.innerHTML += string;
+		}
+		function removeOutputMessage(string){
+			output.innerHTML = output.innerHTML.replace(string, "");
+		}
+		function hasBlanks(element, elementName){
+			if (!element.value.trim()){
+				element.style.borderColor = "red";
+				outputWithDuplicateCheck("The " + elementName + " field is blank. <br>");
+				removeOutputMessage("The " + elementName + " field must be at least 2 characters.<br>")
+			} else {
+				element.style.borderColor = "green";
+				removeOutputMessage("The " + elementName + " field is blank. <br>");
+			}
+		}						
+		function hasLessThan2Char(element, elementName){
+			if (element.value.trim().length < 3 && element.value.trim().length){
+				element.style.borderColor = "red";
+				outputWithDuplicateCheck("The " + elementName + " field must be at least 2 characters.<br>");
+			} else if (element.value.trim().length == 0) {
+				element.style.borderColor = "red";
+			}
+			else {
+				element.style.borderColor = "green";
+				removeOutputMessage("The " + elementName + " field must be at least 2 characters.<br>");
+			}
+		}			
+		function emailAddressValidation(element, elementName){
+			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+			if (!reg.test(element.value)){
+				element.style.borderColor = "red";
+				if (element.value.trim()){
+					outputWithDuplicateCheck("The " + elementName + " field does not contain a vaild email address.<br>");
+				}
+			} else {
+				element.style.borderColor = "green";
+				removeOutputMessage("The " + elementName + " field does not contain a vaild email address.<br>")
+			}
+		}		
+		function passwordConfirmation(element1, elementName1, element2, elementName2){
+			if (element1.value == element2.value){
+				if (element1.value){
+					element1.style.borderColor = "green";
+					element2.style.borderColor = "green";
+					removeOutputMessage("The " + elementName1 + " field and the " + elementName2 + " do not match.<br>");
+				}
+			} else {
+				if (element1.value)
+				element1.style.borderColor = "red";
+				element2.style.borderColor = "red";
+				outputWithDuplicateCheck("The " + elementName1 + " field and the " + elementName2 + " do not match.<br>");
+			}
+		}		
+		function paymentValidation(element, elementName){
+			if (!element.options[element.selectedIndex].value){
+				element.style.borderColor = "red";
+				outputWithDuplicateCheck("Please select an option from the " + elementName + " field.<br>");
+			} else {
+				element.style.borderColor = "green";
+				removeOutputMessage("Please select an option from the " + elementName + " field.<br>")
+			}
+		}
+
+		// functions for onblur="" for each element.
+		function firstNameFieldValidation(){
+			hasBlanks(firstName, "First name");
+			hasLessThan2Char(firstName, "First name");
+		}
+		function lastNameFieldValidation(){
+			hasBlanks(lastName, "Last Name");
+			hasLessThan2Char(lastName, "Last name");
+		}
+		function emailFieldValidation(){
+			hasBlanks(email, "email address");
+			emailAddressValidation(email, "email address");
+		}
+		function passwordFieldValidation(){
+			hasBlanks(password, "Password");
+			passwordConfirmation(password, "Password", passConfirm, "Confirm Password");
+		}
+		function confirmPassFieldValidation(){
+			hasBlanks(passConfirm, "Confirm Password");
+			passwordConfirmation(password, "Password", passConfirm, "Confirm Password");
+		}
+		function paymentFieldValidation(){			
+			paymentValidation(payment, "Payment")
+		}
+
+		// Function to clear element formatting for onfocus="".
+		function removeStyling(element){
+			element.style.borderColor = "initial";
+		}
+
+		// Functions for onSubmit="" event.
+		// Function to confirm all criterias are met.
+		function hasFormCriteriaMet(){
+			return (firstName.style.borderColor == "green" || lastName.style.borderColor == "green" || email.style.borderColor == "green" || password.style.borderColor == "green" || passConfirm.style.borderColor == "green" || payment.style.borderColor == "green"); 
+		}
+		//Funtion to disable input after submit
+		function formDisable(){
+			for(i in document.form.elements)
+				document.form.elements[i].disabled = true;
+		}
+		function inputSummary(bool){
+			if (bool){
+				output.innerHTML = "Submittion Summary:<br>" +
+					"Full Name: " + firstName.value.trim() + " " + lastName.value.trim() + "<br>" +
+					"email address: " + email.value.trim() + "<br>" +
+					"Password confirm:  Matched!<br>" +
+					"Payment type: " + payment.options[payment.selectedIndex].value;
+					formDisable();
+					return false;
+			} else {
+				return false;
+			}
+		}
+		// event lister to stop form from actually submitting
+		document.getElementById("form").addEventListener(submit, function(event){event.preventDefault()});
+	</script>
+	
+	<footer>
+		<hr>
+		<script>
+			//<!--[CDATA[
+			document.write("<br><a href='http://validator.w3.org/check?uri=" +
+				location.href +
+				"\;ss=1;verbose=1' target='display'>" +
+				"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+				"width='50' height='50' border='0' " +
+				"alt='Valid HTML5.' " +
+				"title='Valid HTML5' /></a><br>")
+			 dt = new Date(document.lastModified);
+			document.write("<small>This page was last modified on " +
+				dt.toLocaleString() + "</small>")
+			 //]]-->
+		</script>
+	</footer>
+</body>
+
+</html>
